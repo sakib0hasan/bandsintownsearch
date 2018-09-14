@@ -27,7 +27,7 @@ export interface Event {
     lineup?: string[],
     on_sale_datetime?: string,
     url?: string,
-    venue?: Venue[],
+    venue?: Venue,
 }
 
 export interface Venue {

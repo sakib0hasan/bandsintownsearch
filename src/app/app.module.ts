@@ -10,6 +10,8 @@ import {FormsModule} from '@angular/forms';
 import {ResultsComponent} from './components/results/results.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ApiService} from './services/api.service';
+import {ContentLoaderModule} from '@netbasal/content-loader';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -22,7 +24,9 @@ import {ApiService} from './services/api.service';
         ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
         FlexLayoutModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        ContentLoaderModule,
+        BrowserAnimationsModule
     ],
     providers: [ApiService],
     bootstrap: [AppComponent]

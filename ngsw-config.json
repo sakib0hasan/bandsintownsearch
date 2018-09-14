@@ -28,7 +28,8 @@
         {
             "name": "api",
             "urls": [
-                "https://rest.bandsintown.com/artists/**"
+                "https://rest.bandsintown.com/artists/**",
+                "https://s3.amazonaws.com/bit-photos/**"
             ],
             "cacheConfig": {
                 "maxSize": 100,

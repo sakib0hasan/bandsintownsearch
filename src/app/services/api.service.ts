@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Artist} from '../models/Artist.model';
+import {BehaviorSubject} from 'rxjs';
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -14,8 +15,16 @@ const httpOptions = {
 export class ApiService {
     apiURL = 'https://rest.bandsintown.com/artists/';
 
+    private messageSource = new BehaviorSubject('');
+    searchKeyword = this.messageSource.asObservable();
+
+
     constructor(private http: HttpClient) {
 
+    }
+
+    changeKeyword(message: string) {
+        this.messageSource.next(message);
     }
 
     GetArtistInfo(artistName): Promise<Artist> {

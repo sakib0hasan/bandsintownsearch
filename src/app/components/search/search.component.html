@@ -1,6 +1,9 @@
 <div fxFlex fxLayout="row" fxLayoutAlign="center center">
     <div class="search-bar" fxFlex>
-        <input [(ngModel)]="keyword" autocomplete="off" name="q" fxFlex type="text" placeholder="Start your search here...">
+        <form (keydown)="keyDownFunction($event)">
+            <input [(ngModel)]="keyword" autocomplete="off" name="q" fxFlex type="text"
+                   placeholder="Start your search here...">
+        </form>
         <i class="search-icon fa fa-search"></i>
         <div *ngIf="keyword.length > 0" class="press-enter">(Press enter...)</div>
     </div>

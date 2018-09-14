@@ -1,3 +1,49 @@
-<p>
-  results works!
-</p>
+<div fxFlex fxLayout="row">
+    <div class="result-wrapper" fxFlex>
+        <div class="loader" *ngIf="showLoading">
+            <content-loader [width]="width" [height]="height" [speed]="speed"
+                            [preserveAspectRatio]="preserveAspectRatio"
+                            [primaryColor]="primaryColor" [secondaryColor]="secondaryColor">
+                <svg:rect x="70" y="15" rx="4" ry="4" width="117" height="10"/>
+                <svg:rect x="70" y="35" rx="3" ry="3" width="85" height="10"/>
+                <svg:rect x="0" y="80" rx="3" ry="3" width="350" height="10"/>
+                <svg:rect x="0" y="100" rx="3" ry="3" width="380" height="10"/>
+                <svg:rect x="0" y="120" rx="3" ry="3" width="201" height="10"/>
+                <svg:circle cx="30" cy="30" r="30"/>
+            </content-loader>
+        </div>
+
+        <div *ngIf="showArtistProfile" class="artist-profile" fxLayout.gt-sm="row"  fxLayout="column" fxLayoutGap="24px">
+            <div class="image">
+                <img [src]="artist.BasicInfo.thumb_url" />
+            </div>
+            <div class="info" fxLayout="column">
+                <h3 class="artist-name">Kygo</h3>
+                <p>
+                    <a target="_blank" [href]="artist.BasicInfo.facebook_page_url"><i class="facebook-icon fab fa-facebook"></i> {{artist.BasicInfo.facebook_page_url}}</a>
+                </p>
+                <div class="upcoming-events" fxLayout="column">
+                    <div fxLayout="row" class="event" *ngFor="let event of artist.Events">
+                        <div fxLayout="column" fxLayoutAlign="center center" class="m-l-16 m-r-16">
+                            <div class="month">{{event.datetime | date:'MMM'}}</div>
+                            <div class="date">{{event.datetime | date:'d'}}</div>
+                        </div>
+                        <div fxLayout="row">
+                            <div fxLayout="column" fxLayoutAlign="center center" class="m-l-8 m-r-16">
+                                <i class="location-icon fas fa-map-marker-alt"></i>
+                            </div>
+                            <div fxLayout="column" fxLayoutAlign="center start" >
+                                <div class="address1">{{event.venue.city}}, {{event.venue.country}}</div>
+                                <div class="address2">{{event.venue.name}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

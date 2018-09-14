@@ -1,0 +1,64 @@
+:host {
+    .result-wrapper {
+        max-width: 920px;
+        margin: 24px auto;
+    }
+    .loader {
+        max-width: 555px;
+    }
+    .artist-profile {
+        .image {
+            img {
+                width: 300px;
+            }
+        }
+        .artist-name {
+            font-size: 36px;
+            margin: 0;
+        }
+        .facebook-icon {
+            font-size: 18px;
+            color: #3B5998;
+            margin-right: 6px;
+        }
+        a:link {
+            color: white;
+        }
+        a:visited {
+            color: white;
+        }
+        a:hover {
+            color: white;
+        }
+
+        a:active {
+            color: white;
+        }
+        a {
+            text-decoration: none;
+        }
+        .upcoming-events{
+            border-top: 1px solid gray;
+            .location-icon{
+                font-size: 24px;
+            }
+            .event{
+                height: 70px;
+                border-bottom: 1px solid gray;
+                .month{
+                    font-size: 12px;
+                }
+                .date{
+                    font-size: 26px;
+                }
+                .address1{
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+                .address2{
+                    color: #a5a6ab;
+                }
+            }
+        }
+    }
+}
