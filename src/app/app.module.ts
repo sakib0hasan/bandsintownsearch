@@ -5,19 +5,26 @@ import {AppComponent} from './app.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import { SearchComponent } from './components/search/search.component';
+import {SearchComponent} from './components/search/search.component';
+import {FormsModule} from '@angular/forms';
+import {ResultsComponent} from './components/results/results.component';
+import {HttpClientModule} from '@angular/common/http';
+import {ApiService} from './services/api.service';
 
 @NgModule({
     declarations: [
         AppComponent,
-        SearchComponent
+        SearchComponent,
+        ResultsComponent
     ],
     imports: [
         BrowserModule,
         ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
-        FlexLayoutModule
+        FlexLayoutModule,
+        FormsModule,
+        HttpClientModule
     ],
-    providers: [],
+    providers: [ApiService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

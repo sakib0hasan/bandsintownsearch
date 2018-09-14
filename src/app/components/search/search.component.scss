@@ -1,10 +1,8 @@
 :host {
-    .search-container{
-
-    }
-    .search-bar{
+    .search-bar {
         position: relative;
         max-width: 920px;
+        margin: 0 16px;
         input[type="text"] {
             background: white;
             border: 0 none;
@@ -14,16 +12,22 @@
             max-width: 920px;
             height: 60px;
             padding: 6px 15px 6px 60px;
-            -webkit-border-radius: 20px;
-            -moz-border-radius: 20px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
             border-radius: 10px;
         }
-        .search-icon{
+        .search-icon {
             font-size: 24px;
             color: #cbcbcb;
             position: absolute;
             left: 20px;
             top: 18px;
+        }
+        .press-enter {
+            position: absolute;
+            right: 10px;
+            top: 20px;
+            color: #00000066;
         }
     }
 
