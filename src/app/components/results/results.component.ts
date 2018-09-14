@@ -10,6 +10,7 @@ import {Artist} from '../../models/Artist.model';
 export class ResultsComponent implements OnInit {
     showLoading: boolean = false;
     showArtistProfile: boolean = false;
+    error: boolean = false;
     width = 400;
     height = 130;
     speed = 1;
@@ -25,12 +26,12 @@ export class ResultsComponent implements OnInit {
 
     ngOnInit() {
         this._ApiService.searchKeyword.subscribe(keyword => {
-            console.log(keyword);
             if (keyword === '') {
                 this.showLoading = false;
             } else {
                 this.showLoading = true;
                 this.showArtistProfile = false;
+                this.error = false;
                 this._ApiService.GetArtistInfo(keyword).then(resp => {
                     console.log(resp);
                     this.artist = resp;
@@ -38,6 +39,7 @@ export class ResultsComponent implements OnInit {
                     this.showArtistProfile = true;
                 }, error => {
                     this.showLoading = false;
+                    this.error = true;
                     console.log(error);
                 });
             }

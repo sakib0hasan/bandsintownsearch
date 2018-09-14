@@ -1,5 +1,8 @@
 <div fxFlex fxLayout="row">
     <div class="result-wrapper" fxFlex>
+        <div *ngIf="error" class="error text-center">
+            No results found :(
+        </div>
         <div class="loader" *ngIf="showLoading">
             <content-loader [width]="width" [height]="height" [speed]="speed"
                             [preserveAspectRatio]="preserveAspectRatio"
@@ -18,7 +21,7 @@
                 <img [src]="artist.BasicInfo.thumb_url" />
             </div>
             <div class="info" fxLayout="column">
-                <h3 class="artist-name">Kygo</h3>
+                <h3 class="artist-name">{{artist.BasicInfo.name}}</h3>
                 <p>
                     <a target="_blank" [href]="artist.BasicInfo.facebook_page_url"><i class="facebook-icon fab fa-facebook"></i> {{artist.BasicInfo.facebook_page_url}}</a>
                 </p>
