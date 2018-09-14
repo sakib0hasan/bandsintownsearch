@@ -1,27 +1,16 @@
-# Bandsintownsearch
+# Bands In Town Search
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+## Features:
+1. Input for artist name
+2. Show Artist's Name, Picture, Facebook URL, Events
+3. Styling
+4. Caching using Service Worker
+5. Facebook Style Content Loading
+6. Unit testing
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Usage:
+### Just run `npm i && ng serve` to start the server.
+Please note, caching doesn't work on when running with 'ng serve'.
+Please run the following commands to test caching:
+``ng build --prod``
+``http-server -p 8080 -c-1 dist/bandsintownsearch``
