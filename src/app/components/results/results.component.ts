@@ -21,7 +21,7 @@ export class ResultsComponent implements OnInit {
     public artist: Artist;
 
     constructor(private _ApiService: ApiService) {
-        // this.artist = new Artist();
+
     }
 
     ngOnInit() {
@@ -33,14 +33,12 @@ export class ResultsComponent implements OnInit {
                 this.showArtistProfile = false;
                 this.error = false;
                 this._ApiService.GetArtistInfo(keyword).then(resp => {
-                    console.log(resp);
                     this.artist = resp;
                     this.showLoading = false;
                     this.showArtistProfile = true;
                 }, error => {
                     this.showLoading = false;
                     this.error = true;
-                    console.log(error);
                 });
             }
         });

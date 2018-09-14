@@ -2,7 +2,7 @@
     .result-wrapper {
         max-width: 920px;
         margin: 24px auto;
-        .error{
+        .error {
             font-size: 24px;
         }
     }
@@ -41,25 +41,25 @@
         a {
             text-decoration: none;
         }
-        .upcoming-events{
+        .upcoming-events {
             border-top: 1px solid gray;
-            .location-icon{
+            .location-icon {
                 font-size: 24px;
             }
-            .event{
+            .event {
                 height: 70px;
                 border-bottom: 1px solid gray;
-                .month{
+                .month {
                     font-size: 12px;
                 }
-                .date{
+                .date {
                     font-size: 26px;
                 }
-                .address1{
+                .address1 {
                     font-size: 18px;
                     font-weight: bold;
                 }
-                .address2{
+                .address2 {
                     color: #a5a6ab;
                 }
             }
