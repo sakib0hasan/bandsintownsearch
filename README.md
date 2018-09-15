@@ -8,9 +8,16 @@
 5. Facebook Style Content Loading
 6. Unit testing
 
-## Usage:
+## Live Demo
+Live demo is available at: https://bandsintownsearch.appsrv.co
+
+## Running the app:
 ### Just run `npm i && ng serve` to start the server.
 Please note, caching doesn't work on when running with 'ng serve'.
+
 Please run the following commands to test caching:
-``ng build --prod``
-``http-server -p 8080 -c-1 dist/bandsintownsearch``
+```
+npm i
+ng build --prod --build-optimizer
+http-server -p 8080 -c-1 dist/bandsintownsearch
+```
